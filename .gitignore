@@ -1,0 +1,6 @@
+build
+node_modules
+src/app/images_unoptimized
+webp.sh
+proposal.mp4
+src/*/*.css

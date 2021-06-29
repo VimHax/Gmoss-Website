@@ -1,0 +1,581 @@
+body {
+	margin: 0;
+	font-family: 'Nunito', sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+sub {
+	vertical-align: 0;
+	position: relative;
+	top: 0.8ex;
+}
+
+#Header {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: white;
+	transition: top 0.3s;
+	height: 68px;
+	li {
+		@media (max-width: 992px) {
+			display: none;
+		}
+		float: left;
+	}
+	li a {
+		font-family: 'Nunito', sans-serif;
+		text-transform: uppercase;
+		font-weight: bold;
+		letter-spacing: 2px;
+		color: black;
+		transition: all 0.25s;
+		display: block;
+		text-align: center;
+		padding: 22px 25px;
+		text-decoration: none;
+	}
+	li a:hover {
+		color: #555;
+	}
+	button {
+		display: none;
+		padding: 20px 25px;
+		border-color: #00000000;
+		font-size: 20px;
+		outline: none;
+		background: none;
+		@media (max-width: 992px) {
+			display: block;
+		}
+	}
+	button:hover {
+		cursor: pointer;
+	}
+}
+
+#SidePanel {
+	width: 0px;
+	position: fixed;
+	z-index: 1;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+	a {
+		font-family: 'Nunito', sans-serif;
+		text-transform: uppercase;
+		font-weight: bold;
+		letter-spacing: 2px;
+		color: #818181;
+		transition: all 0.25s;
+		display: block;
+		white-space: nowrap;
+		padding: 15px 20px;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #f1f1f1;
+	}
+	#Close {
+		position: absolute;
+		top: 0;
+		right: 0px;
+		font-size: 20px;
+	}
+}
+
+#HeroBackground {
+	object-fit: cover;
+	object-position: bottom;
+	height: 100vh;
+	width: 100vw;
+	animation: Saturate 3s;
+	@keyframes Saturate {
+		from {
+			filter: saturate(0);
+		}
+	}
+}
+
+#Hero {
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -30%);
+	text-align: center;
+	p {
+		margin-top: 0px;
+		font-size: calc(max(18px, 1.8vw));
+	}
+}
+
+#QuoteContainer {
+	position: relative;
+	height: 150px;
+	#Quote {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 50vw;
+		@media (max-width: 768px) {
+			width: 75vw;
+		}
+		height: 100px;
+		#QuoteContent {
+			margin: 0;
+			font-size: calc(max(15px, 1vw));
+		}
+		#QuoteAuthor {
+			margin: 0;
+			margin-top: 10px;
+			font-size: 15px;
+			color: #555;
+		}
+		div {
+			position: absolute;
+			top: 50%;
+			right: 0px;
+			transform: translate(0%, -50%);
+			width: calc(50vw - 100px - 20px);
+			@media (max-width: 992px) {
+				width: 75vw;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+		img {
+			width: 100px;
+			margin-right: 10px;
+			border-radius: 50%;
+			float: left;
+			@media (max-width: 992px) {
+				width: 0px;
+			}
+		}
+	}
+}
+
+.Background {
+	object-fit: cover;
+	object-position: center;
+}
+
+#TheProblemContainer {
+	#TheProblem {
+		display: table;
+		margin: 75px auto;
+		color: white;
+		font-size: 21px;
+		width: 75vw;
+		@media (max-width: 768px) {
+			display: block;
+			margin: 75px 25px;
+			font-size: 18px;
+			width: auto;
+		}
+		@media (max-width: 1200px) and (min-width: 768px) {
+			display: block;
+			margin: 75px 64px;
+			width: auto;
+		}
+		.Title {
+			font-family: 'Montserrat', sans-serif;
+			background: linear-gradient(
+				90deg,
+				rgba(255, 115, 0, 1) 0%,
+				rgba(255, 0, 0, 1) 100%
+			);
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			font-size: 60px;
+			@media (max-width: 576px) {
+				font-size: 50px;
+			}
+			margin: 75px 0;
+		}
+		.SubTopic {
+			font-family: 'Montserrat', sans-serif;
+			background: linear-gradient(
+				90deg,
+				rgba(255, 115, 0, 1) 0%,
+				rgba(255, 0, 0, 1) 100%
+			);
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			font-size: 40px;
+			@media (max-width: 576px) {
+				font-size: 30px;
+			}
+			margin: 25px 0;
+		}
+		a {
+			color: rgb(255, 115, 0);
+			text-decoration: none;
+			transition: all 0.25s;
+			margin: 75px 0;
+		}
+		a:hover {
+			color: rgb(255, 170, 100);
+		}
+		.ImageLink {
+			display: table;
+			margin: 20px auto;
+			color: #888;
+			text-decoration: none;
+			transition: all 0.25s;
+			text-align: center;
+			p {
+				margin: 0;
+				margin-top: 5px;
+			}
+			img {
+				width: 75%;
+				@media (max-width: 1200px) {
+					width: 100%;
+				}
+				border-radius: 1%;
+			}
+		}
+		.ImageLink:hover {
+			color: #fff;
+		}
+		.VideoLink {
+			width: 100%;
+			display: table;
+			margin: 20px auto;
+			color: #888;
+			text-decoration: none;
+			transition: all 0.25s;
+			text-align: center;
+			p {
+				margin: 0;
+				margin-top: 5px;
+			}
+			iframe {
+				width: 75%;
+				height: 500px;
+				@media (max-width: 1200px) {
+					width: 100%;
+				}
+				border-radius: 1%;
+			}
+		}
+		.VideoLink:hover {
+			color: #fff;
+		}
+	}
+}
+
+#OurProjectContainer {
+	#OurProject {
+		display: table;
+		margin: 75px auto;
+		color: white;
+		font-size: 21px;
+		width: 75vw;
+		@media (max-width: 768px) {
+			display: block;
+			margin: 75px 25px;
+			font-size: 18px;
+			width: auto;
+		}
+		@media (max-width: 1200px) and (min-width: 768px) {
+			display: block;
+			margin: 75px 64px;
+			width: auto;
+		}
+		.Title {
+			font-family: 'Montserrat', sans-serif;
+			background: linear-gradient(
+				90deg,
+				rgba(7, 245, 9, 1) 0%,
+				rgb(0, 83, 0) 100%
+			);
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			font-size: 60px;
+			@media (max-width: 576px) {
+				font-size: 50px;
+			}
+			margin: 75px 0;
+		}
+		.SubTopic {
+			font-family: 'Montserrat', sans-serif;
+			background: linear-gradient(
+				90deg,
+				rgba(7, 245, 9, 1) 0%,
+				rgb(0, 83, 0) 100%
+			);
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			font-size: 40px;
+			@media (max-width: 576px) {
+				font-size: 30px;
+			}
+			margin: 25px 0;
+		}
+		a {
+			color: rgb(7, 245, 9);
+			text-decoration: none;
+			transition: all 0.25s;
+			margin: 75px 0;
+		}
+		a:hover {
+			color: rgb(140, 255, 142);
+		}
+		.ImageLink {
+			display: table;
+			margin: 20px auto;
+			color: #888;
+			text-decoration: none;
+			transition: all 0.25s;
+			text-align: center;
+			p {
+				margin: 0;
+				margin-top: 5px;
+			}
+			img {
+				width: 75%;
+				@media (max-width: 1200px) {
+					width: 100%;
+				}
+				border-radius: 1%;
+			}
+		}
+		.ImageLink:hover {
+			color: #fff;
+		}
+		.Details {
+			color: #888;
+		}
+	}
+}
+
+#OurProgressContainer {
+	#OurProgress {
+		display: table;
+		margin: 75px auto;
+		color: white;
+		font-size: 21px;
+		width: 75vw;
+		@media (max-width: 768px) {
+			display: block;
+			margin: 75px 25px;
+			font-size: 18px;
+			width: auto;
+		}
+		@media (max-width: 1200px) and (min-width: 768px) {
+			display: block;
+			margin: 75px 64px;
+			width: auto;
+		}
+		.Title {
+			font-family: 'Montserrat', sans-serif;
+			background: linear-gradient(
+				90deg,
+				rgba(77, 189, 239, 1) 0%,
+				rgba(11, 82, 174, 1) 100%
+			);
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			font-size: 60px;
+			@media (max-width: 576px) {
+				font-size: 50px;
+			}
+			margin: 75px 0;
+		}
+		.SubTopic {
+			font-family: 'Montserrat', sans-serif;
+			background: linear-gradient(
+				90deg,
+				rgba(77, 189, 239, 1) 0%,
+				rgba(11, 82, 174, 1) 100%
+			);
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			font-size: 40px;
+			@media (max-width: 576px) {
+				font-size: 30px;
+			}
+			margin: 25px 0;
+		}
+		a {
+			color: rgb(77, 189, 239);
+			text-decoration: none;
+			transition: all 0.25s;
+			margin: 75px 0;
+		}
+		a:hover {
+			color: rgb(158, 222, 252);
+		}
+		img {
+			width: 25%;
+			@media (max-width: 1200px) {
+				width: 100%;
+			}
+			border-radius: 1%;
+		}
+		img:hover {
+			cursor: pointer;
+			filter: brightness(0.75);
+
+			transition: all 0.25s;
+		}
+		.LargePhoto img {
+			width: 100%;
+			border-radius: 0%;
+		}
+		.Photos img {
+			width: 25%;
+			margin-bottom: -7px;
+			@media (max-width: 768px) {
+				width: 50%;
+				margin-bottom: -6px;
+			}
+			border-radius: 0%;
+			height: 300px;
+			object-fit: cover;
+		}
+	}
+}
+
+#AboutUsContainer {
+	#AboutUs {
+		display: table;
+		margin: 75px auto;
+		color: black;
+		font-size: 21px;
+		width: 75vw;
+		@media (max-width: 768px) {
+			display: block;
+			margin: 75px 25px;
+			font-size: 18px;
+			width: auto;
+		}
+		@media (max-width: 1200px) and (min-width: 768px) {
+			display: block;
+			margin: 75px 64px;
+			width: auto;
+		}
+		.Title {
+			font-family: 'Montserrat', sans-serif;
+			background: rgb(60, 60, 60);
+			background: linear-gradient(
+				90deg,
+				rgba(60, 60, 60, 1) 0%,
+				rgba(0, 0, 0, 1) 100%
+			);
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			font-size: 60px;
+			@media (max-width: 576px) {
+				font-size: 50px;
+			}
+			margin: 75px 0;
+		}
+		.SubTopic {
+			font-family: 'Montserrat', sans-serif;
+			background: rgb(60, 60, 60);
+			background: linear-gradient(
+				90deg,
+				rgba(60, 60, 60, 1) 0%,
+				rgba(0, 0, 0, 1) 100%
+			);
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			font-size: 36px;
+			@media (max-width: 576px) {
+				font-size: 30px;
+			}
+			margin: 20px 0;
+			margin-top: 0;
+		}
+		.SubTopicOnly {
+			font-family: 'Montserrat', sans-serif;
+			background: rgb(60, 60, 60);
+			background: linear-gradient(
+				90deg,
+				rgba(60, 60, 60, 1) 0%,
+				rgba(0, 0, 0, 1) 100%
+			);
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			font-size: 36px;
+			@media (max-width: 576px) {
+				font-size: 30px;
+			}
+			margin: 0;
+		}
+		img {
+			width: 100%;
+			height: 500px;
+			object-fit: cover;
+			transition: all 0.25s;
+		}
+		.Photos {
+			margin-top: 75px;
+		}
+		.Photos .Photo {
+			display: inline-block;
+			position: relative;
+			text-align: center;
+			color: black;
+			width: 49.5%;
+			margin: 0.5% 0;
+			@media (max-width: 768px) {
+				margin: 10px 0;
+				width: 100%;
+			}
+			img {
+				height: 500px;
+			}
+			img:hover {
+				cursor: pointer;
+			}
+			transition: all 0.25s;
+			.Content {
+				margin-top: -6px;
+				transition: all 0.25s;
+				text-align: left;
+				background: white;
+				padding: 20px;
+				p {
+					margin: 0;
+				}
+			}
+		}
+		.Photos > :nth-child(odd) {
+			@media (min-width: 768px) {
+				margin-right: 1%;
+			}
+		}
+	}
+}
+
+#FooterContainer {
+	position: relative;
+	height: 100px;
+	#Footer {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		p {
+			text-align: center;
+			margin: 0;
+			font-size: calc(max(15px, 1vw));
+		}
+	}
+}
